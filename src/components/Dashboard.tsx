@@ -8,7 +8,7 @@ interface IDashboardProps {
 
 const Dashboard = ({ team }: IDashboardProps) => {
   return (
-    <div className="d-flex align-items-start justify-content-start px-4 flex-column dashboard">
+    <div className="d-flex align-items-start justify-content-start px-4 flex-column pt-4 dashboard">
       {team.map((user) => (
         <OneUser user={user} key={user.name} />
       ))}

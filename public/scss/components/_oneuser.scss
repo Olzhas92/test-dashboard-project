@@ -1,0 +1,52 @@
+.oneUser {
+  width: 100%;
+  padding: 16px 0;
+  gap: 16px;
+
+  &__profile {
+    border-radius: 100px;
+  }
+
+  &__info {
+    gap: 8px;
+
+    h4 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    #email {
+      color: rgb(169, 167, 167);
+      font-size: 20px;
+    }
+
+    #permission {
+      color: rgb(169, 167, 167);
+      font-size: 16px;
+      padding: 8px 16px;
+      border: 1px solid lightgray;
+      border-radius: 8px;
+
+      &:hover {
+        color: #000000;
+        background-color: lightblue;
+        font-size: 16px;
+        padding: 8px 16px;
+        border: 1px solid lightgray;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+
+    &-details,
+    &-permissions {
+      gap: 16px;
+    }
+  }
+
+  &__settings {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+  }
+}

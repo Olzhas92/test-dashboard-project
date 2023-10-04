@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { IModel } from "@App/page";
+import settingsIcon from "@Icons/more.png";
 
 interface IOneUserProps {
   user: IModel;
@@ -8,19 +9,30 @@ interface IOneUserProps {
 
 const OneUser = ({ user }: IOneUserProps) => {
   return (
-    <div className="d-flex align-items-center justify-content-start oneUser">
-      <Image src={user.image} alt="User" width={64} height={64} />
-      <div className="d-flex align-items-start justify-content-start flex-column">
-        <div className="d-flex align-items-center justify-content-start">
-          <h3>{user.name}</h3>
-          <span>{user.email}</span>
+    <div className="d-flex align-items-start justify-content-start oneUser">
+      <Image
+        src={user.image}
+        alt="User"
+        width={64}
+        height={64}
+        className="oneUser__profile"
+      />
+      <div className="d-flex align-items-start justify-content-start flex-column oneUser__info">
+        <div className="d-flex align-items-center justify-content-start oneUser__info-details">
+          <h4>{user.name}</h4>
+          <span id="email">{user.email}</span>
         </div>
-        <div className="d-flex align-items-center justify-content-start">
+        <div className="d-flex align-items-center justify-content-start oneUser__info-permissions">
           {user.permissions.map((permission) => (
-            <span key={permission}>{permission}</span>
+            <span key={permission} id="permission">
+              {permission}
+            </span>
           ))}
         </div>
       </div>
+      <button className="d-flex align-items-start oneUser__settings">
+        <Image src={settingsIcon} alt="Settings" width={16} height={16} />
+      </button>
     </div>
   );
 };
