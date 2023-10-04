@@ -22,7 +22,7 @@ const Sidebar = () => {
           height={64}
           className="sidebar__logo"
         />
-        <h2>CodeUnion</h2>
+        <h2>Smart Logo</h2>
       </div>
       <div className="d-flex align-items-start justify-content-start sidebar__profile">
         <Image

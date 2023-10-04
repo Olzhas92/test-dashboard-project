@@ -1,4 +1,5 @@
-@import "vendors/bootstrap-config", "pages/home";
+@import "vendors/bootstrap-config", "pages/home", "components/sidebar",
+  "components/searchbar";
 
 * {
   font-family: "Roboto";

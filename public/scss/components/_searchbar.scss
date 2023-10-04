@@ -1,0 +1,45 @@
+.searchbar {
+  gap: 16px;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+
+  &__title {
+    margin: 0;
+    margin-right: auto;
+    width: 20%;
+  }
+
+  &__search {
+    position: relative;
+    width: 50%;
+    input {
+      border: none;
+      padding: 8px 24px;
+      border-radius: 8px;
+      border: 1px solid gray;
+
+      &::placeholder {
+        color: gray;
+      }
+    }
+
+    &--active {
+      width: 100%;
+    }
+
+    label {
+      position: absolute;
+      right: 8px;
+      cursor: pointer;
+    }
+  }
+
+  &__add {
+    padding: 8px 24px;
+    background-color: rgb(10, 209, 10);
+    color: white;
+    font-size: 16px;
+    border: 1px solid rgb(10, 209, 10);
+    border-radius: 8px;
+  }
+}
