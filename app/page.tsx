@@ -1,10 +1,20 @@
 import React from "react";
+import Sidebar from "@Components/Sidebar";
 
 const Home = () => {
   return (
-    <div className="d-flex align-items-center justify-content-center flex-column w-100">
-      <h1>Home</h1>
-      <p>This is a test dashboard project.</p>
+    <div className="container-fluid no-select">
+      <div className="row">
+        <div className="col-3">
+          <Sidebar />
+        </div>
+        <div className="col-9">
+          <div className="row">
+            <div className="col-12">Search Bar</div>
+            <div className="col-12 main">Main</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

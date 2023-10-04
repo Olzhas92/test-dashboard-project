@@ -1,0 +1,77 @@
+.sidebar {
+  height: 100vh;
+  gap: 16px;
+
+  &__logo {
+    gap: 8px;
+
+    h2 {
+      color: crimson;
+      margin: 0;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__profile {
+    gap: 8px;
+    width: 100%;
+
+    img {
+      border-radius: 100px;
+    }
+
+    &-user {
+      gap: 12px;
+      height: auto;
+
+      h4 {
+        margin: 0;
+      }
+    }
+  }
+
+  &__menu {
+    &-list {
+      gap: 8px;
+      list-style: none;
+      font-size: 24px;
+      padding: 0;
+      margin: 0;
+
+      li {
+        gap: 8px;
+        padding: 8px 0 8px 8px;
+        cursor: pointer;
+        width: 100%;
+
+        &:hover {
+          background-color: lightblue;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  &__exit {
+    margin-top: auto;
+    color: lightcoral;
+    border: none;
+    background-color: transparent;
+    font-family: "Roboto";
+    font-size: 24px;
+    gap: 8px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.main {
+  background-color: rgb(241, 237, 237);
+  height: 100vh;
+}

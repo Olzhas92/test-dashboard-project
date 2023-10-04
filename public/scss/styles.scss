@@ -1,1 +1,7 @@
-@import "vendors/bootstrap-config";
+@import "vendors/bootstrap-config", "pages/home";
+
+* {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+}
