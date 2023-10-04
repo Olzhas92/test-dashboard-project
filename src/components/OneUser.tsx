@@ -5,9 +5,18 @@ import settingsIcon from "@Icons/more.png";
 
 interface IOneUserProps {
   user: IModel;
+  settingsAreClicked: boolean;
+  setSettingsAreClicked: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const OneUser = ({ user }: IOneUserProps) => {
+const OneUser = ({
+  user,
+  settingsAreClicked,
+  setSettingsAreClicked,
+}: IOneUserProps) => {
+  const settingsClickHandle = () => {
+    setSettingsAreClicked(!settingsAreClicked);
+  };
   return (
     <div className="d-flex align-items-start justify-content-start oneUser">
       <Image
@@ -30,7 +39,10 @@ const OneUser = ({ user }: IOneUserProps) => {
           ))}
         </div>
       </div>
-      <button className="d-flex align-items-start oneUser__settings">
+      <button
+        className="d-flex align-items-start oneUser__settings"
+        onClick={settingsClickHandle}
+      >
         <Image src={settingsIcon} alt="Settings" width={16} height={16} />
       </button>
     </div>

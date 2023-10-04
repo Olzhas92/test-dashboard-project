@@ -1,7 +1,11 @@
 .main {
   background-color: rgb(241, 237, 237);
   height: 100vh;
-  padding: 0 64px;
+  padding: 24px 64px 0;
+}
+
+.search {
+  border-radius: 16px 16px 0 0;
 }
 
 .search,

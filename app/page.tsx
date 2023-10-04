@@ -17,6 +17,7 @@ const Home = () => {
   const [searchedEmail, setSearchedEmail] = useState("");
   const [userAddingIsClicked, setUserAddingIsClicked] = useState(false);
   const [team, setTeam] = useState<IModel[]>(data);
+  const [settingsAreClicked, setSettingsAreClicked] = useState(false);
 
   const searchForEmail = (inputEmail: string) => {
     setSearchedEmail(inputEmail);
@@ -37,8 +38,12 @@ const Home = () => {
                 setUserAddingIsClicked={setUserAddingIsClicked}
               />
             </div>
-            <div className="col-12 px-0 dashboard">
-              <Dashboard team={team} />
+            <div className="col-12 px-0 pb-3 dashboard">
+              <Dashboard
+                team={team}
+                settingsAreClicked={settingsAreClicked}
+                setSettingsAreClicked={setSettingsAreClicked}
+              />
             </div>
           </div>
         </div>
