@@ -1,0 +1,42 @@
+.formik {
+  width: 100%;
+}
+
+.formikForm {
+  gap: 16px;
+  width: 100%;
+
+  &__field {
+    width: 50%;
+    border-radius: 8px;
+    padding: 8px 0 8px 8px;
+    border-radius: 1px solid lightgray;
+  }
+
+  &__buttons {
+    gap: 8px;
+    width: 50%;
+  }
+
+  &__add,
+  &__close {
+    width: 25%;
+    border-radius: 8px;
+    padding: 8px 0 8px 8px;
+    border-radius: 1px solid lightgray;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__add {
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+
+  &__close {
+    &:hover {
+      background-color: lightcoral;
+    }
+  }
+}

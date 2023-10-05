@@ -19,7 +19,7 @@ const AddUser = ({ setUserAddingIsClicked, addUser }: IAddUserProps) => {
   };
 
   return (
-    <div>
+    <div className="d-flex align-items-start justify-content-start formik">
       <Formik
         initialValues={{ name: "", email: "" }}
         validationSchema={ValidationSchema}
@@ -39,7 +39,7 @@ const AddUser = ({ setUserAddingIsClicked, addUser }: IAddUserProps) => {
           return (
             <Form
               method="POST"
-              className="d-flex align-items-start justify-content-start flex-column"
+              className="d-flex align-items-start justify-content-start flex-column formikForm"
               onSubmit={handleSubmit}
             >
               <Field
@@ -49,6 +49,7 @@ const AddUser = ({ setUserAddingIsClicked, addUser }: IAddUserProps) => {
                 id="name"
                 required
                 placeholder="Введите имя"
+                className="formikForm__field"
               />
               <Field
                 value={values.email}
@@ -57,12 +58,21 @@ const AddUser = ({ setUserAddingIsClicked, addUser }: IAddUserProps) => {
                 id="email"
                 required
                 placeholder="Введите Email"
+                className="formikForm__field"
               />
 
-              <button type="submit">Добавить</button>
-              <button type="button" onClick={closeHandle}>
-                Закрыть
-              </button>
+              <div className="d-flex align-items-center justify-content-between formikForm__buttons">
+                <button
+                  type="button"
+                  onClick={closeHandle}
+                  className="formikForm__close"
+                >
+                  Закрыть
+                </button>
+                <button type="submit" className="formikForm__add">
+                  Добавить
+                </button>
+              </div>
             </Form>
           );
         }}
