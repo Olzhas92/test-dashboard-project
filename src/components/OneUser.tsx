@@ -8,6 +8,7 @@ interface IOneUserProps {
   settingsAreClicked: boolean;
   setSettingsAreClicked: React.Dispatch<React.SetStateAction<boolean>>;
   deleteUser: React.Dispatch<string>;
+  addUser: React.Dispatch<IModel>;
 }
 
 const OneUser = ({
@@ -15,6 +16,7 @@ const OneUser = ({
   settingsAreClicked,
   setSettingsAreClicked,
   deleteUser,
+  addUser,
 }: IOneUserProps) => {
   const [clickedName, setClickedName] = useState("");
 

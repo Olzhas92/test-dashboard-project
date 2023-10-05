@@ -7,6 +7,7 @@ interface IDashboardProps {
   settingsAreClicked: boolean;
   setSettingsAreClicked: React.Dispatch<React.SetStateAction<boolean>>;
   deleteUser: React.Dispatch<string>;
+  addUser: React.Dispatch<IModel>;
 }
 
 const Dashboard = ({
@@ -14,6 +15,7 @@ const Dashboard = ({
   settingsAreClicked,
   setSettingsAreClicked,
   deleteUser,
+  addUser,
 }: IDashboardProps) => {
   return (
     <div className="d-flex align-items-start justify-content-start px-4 flex-column pt-4 dashboard">
@@ -24,6 +26,7 @@ const Dashboard = ({
           settingsAreClicked={settingsAreClicked}
           setSettingsAreClicked={setSettingsAreClicked}
           deleteUser={deleteUser}
+          addUser={addUser}
         />
       ))}
     </div>

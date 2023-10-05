@@ -29,6 +29,11 @@ const Home = () => {
     setTeam(updatedTeam);
   };
 
+  const addUser = (user: IModel) => {
+    let updatedTeam = [...team, user];
+    setTeam(updatedTeam);
+  };
+
   return (
     <div className="container-fluid no-select">
       <div className="row">
@@ -45,6 +50,7 @@ const Home = () => {
                 searchedEmail={searchedEmail}
                 searchForEmail={searchForEmail}
                 setUserAddingIsClicked={setUserAddingIsClicked}
+                addUser={addUser}
               />
             </div>
             <div className="col-12 px-0 pb-5 dashboard">
@@ -53,6 +59,7 @@ const Home = () => {
                 settingsAreClicked={settingsAreClicked}
                 setSettingsAreClicked={setSettingsAreClicked}
                 deleteUser={deleteUser}
+                addUser={addUser}
               />
             </div>
           </div>

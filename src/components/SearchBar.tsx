@@ -3,17 +3,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import searchIcon from "@Icons/search.png";
+import { IModel } from "@App/page";
 
 interface ISearchBarProps {
   searchedEmail: string;
   searchForEmail: React.Dispatch<string>;
   setUserAddingIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
+  addUser: React.Dispatch<IModel>;
 }
 
 const SearchBar = ({
   searchedEmail,
   searchForEmail,
   setUserAddingIsClicked,
+  addUser,
 }: ISearchBarProps) => {
   const [searchIsVisible, setSearchIsVisible] = useState(false);
 
@@ -29,7 +32,13 @@ const SearchBar = ({
 
   const addClickHandle = () => {
     setUserAddingIsClicked(true);
-    console.log("clicked");
+    let newUser = {
+      name: "Olzhas",
+      email: "olzhas@gmail.com",
+      permissions: ["Тест"],
+      image: "https://picsum.photos/200",
+    };
+    addUser(newUser);
   };
 
   return (
