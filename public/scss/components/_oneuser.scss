@@ -1,0 +1,82 @@
+.oneUser {
+  width: 100%;
+  padding: 16px 0;
+  gap: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lightcoral;
+    border-radius: 8px;
+  }
+
+  &:hover #email,
+  &:hover #permission {
+    color: #000000;
+  }
+
+  &__profile {
+    border-radius: 100px;
+  }
+
+  &__info {
+    gap: 4px;
+
+    h4 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    #email {
+      color: rgb(169, 167, 167);
+      font-size: 20px;
+    }
+
+    #permission {
+      color: rgb(169, 167, 167);
+      font-size: 16px;
+      padding: 8px 16px;
+      border: 1px solid lightgray;
+      border-radius: 8px;
+
+      &:hover {
+        color: #000000;
+        background-color: lightblue;
+        font-size: 16px;
+        padding: 8px 16px;
+        border: 1px solid lightgray;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+
+    &-details,
+    &-permissions {
+      gap: 16px;
+    }
+  }
+
+  &__settings {
+    margin-left: auto;
+    margin-bottom: auto;
+    background-color: transparent;
+    border: none;
+    position: relative;
+
+    &-dropdown {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 240px;
+      background-color: #fff; /* Set your background color */
+      box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+      padding: 8px 16px;
+      border-radius: 16px;
+      text-align: start;
+      cursor: pointer;
+
+      &--delete {
+        color: lightgray;
+      }
+    }
+  }
+}
