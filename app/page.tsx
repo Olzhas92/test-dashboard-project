@@ -18,18 +18,27 @@ const Home = () => {
   const [userAddingIsClicked, setUserAddingIsClicked] = useState(false);
   const [team, setTeam] = useState<IModel[]>(data);
   const [settingsAreClicked, setSettingsAreClicked] = useState(false);
+  const [burgerMenuIsClicked, setBurgerMenuIsClicked] = useState(false);
 
   const searchForEmail = (inputEmail: string) => {
     setSearchedEmail(inputEmail);
   };
 
+  const deleteUser = (email: string) => {
+    const updatedTeam = team.filter((user) => user.email !== email);
+    setTeam(updatedTeam);
+  };
+
   return (
     <div className="container-fluid no-select">
       <div className="row">
-        <div className="col-3 px-0">
-          <Sidebar />
+        <div className="col-1 px-0">
+          <Sidebar
+            burgerMenuIsClicked={burgerMenuIsClicked}
+            setBurgerMenuIsClicked={setBurgerMenuIsClicked}
+          />
         </div>
-        <div className="col-9 main">
+        <div className="col-11 main">
           <div className="row">
             <div className="col-12 px-0 pt-3 search">
               <SearchBar
@@ -38,11 +47,12 @@ const Home = () => {
                 setUserAddingIsClicked={setUserAddingIsClicked}
               />
             </div>
-            <div className="col-12 px-0 pb-3 dashboard">
+            <div className="col-12 px-0 pb-5 dashboard">
               <Dashboard
                 team={team}
                 settingsAreClicked={settingsAreClicked}
                 setSettingsAreClicked={setSettingsAreClicked}
+                deleteUser={deleteUser}
               />
             </div>
           </div>

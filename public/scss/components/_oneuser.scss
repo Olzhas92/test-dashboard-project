@@ -49,5 +49,23 @@
     margin-bottom: auto;
     background-color: transparent;
     border: none;
+    position: relative;
+
+    &-dropdown {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 240px;
+      background-color: #fff; /* Set your background color */
+      box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+      padding: 8px 16px;
+      border-radius: 16px;
+      text-align: start;
+      cursor: pointer;
+
+      &--delete {
+        color: lightgray;
+      }
+    }
   }
 }

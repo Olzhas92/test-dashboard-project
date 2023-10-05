@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { IModel } from "@App/page";
 import settingsIcon from "@Icons/more.png";
@@ -7,16 +7,31 @@ interface IOneUserProps {
   user: IModel;
   settingsAreClicked: boolean;
   setSettingsAreClicked: React.Dispatch<React.SetStateAction<boolean>>;
+  deleteUser: React.Dispatch<string>;
 }
 
 const OneUser = ({
   user,
   settingsAreClicked,
   setSettingsAreClicked,
+  deleteUser,
 }: IOneUserProps) => {
-  const settingsClickHandle = () => {
+  const [clickedName, setClickedName] = useState("");
+
+  const settingsClickHandle = (name: string) => {
     setSettingsAreClicked(!settingsAreClicked);
+
+    if (clickedName === name) {
+      setClickedName("");
+    } else {
+      setClickedName(name);
+    }
   };
+
+  const deleteHandle = (name: string) => {
+    deleteUser(name);
+  };
+
   return (
     <div className="d-flex align-items-start justify-content-start oneUser">
       <Image
@@ -41,9 +56,27 @@ const OneUser = ({
       </div>
       <button
         className="d-flex align-items-start oneUser__settings"
-        onClick={settingsClickHandle}
+        onClick={() => {
+          settingsClickHandle(user.name);
+        }}
       >
         <Image src={settingsIcon} alt="Settings" width={16} height={16} />
+        {settingsAreClicked && user.name === clickedName && (
+          <div className="d-flex align-items-start justify-content-start flex-column oneUser__settings-dropdown">
+            <span className="oneUser__settings-dropdown--edit">
+              Изменить право доступа
+            </span>
+            <span className="oneUser__settings-dropdown--send">
+              Отправить код повторно
+            </span>
+            <span
+              className="oneUser__settings-dropdown--delete"
+              onClick={() => deleteHandle(user.email)}
+            >
+              Удалить
+            </span>
+          </div>
+        )}
       </button>
     </div>
   );
