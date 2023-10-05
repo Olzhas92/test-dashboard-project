@@ -8,7 +8,7 @@ interface IOneUserProps {
   settingsAreClicked: boolean;
   setSettingsAreClicked: React.Dispatch<React.SetStateAction<boolean>>;
   deleteUser: React.Dispatch<string>;
-  addUser: React.Dispatch<IModel>;
+  editUser: React.Dispatch<string>;
 }
 
 const OneUser = ({
@@ -16,7 +16,7 @@ const OneUser = ({
   settingsAreClicked,
   setSettingsAreClicked,
   deleteUser,
-  addUser,
+  editUser,
 }: IOneUserProps) => {
   const [clickedName, setClickedName] = useState("");
 
@@ -34,8 +34,15 @@ const OneUser = ({
     deleteUser(name);
   };
 
+  const userClickHandle = (email: string) => {
+    editUser(email);
+  };
+
   return (
-    <div className="d-flex align-items-start justify-content-start oneUser">
+    <div
+      className="d-flex align-items-start justify-content-start px-3 oneUser"
+      onClick={() => userClickHandle(user.email)}
+    >
       <Image
         src={user.image}
         alt="User"

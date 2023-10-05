@@ -34,6 +34,12 @@ const Home = () => {
     setTeam(updatedTeam);
   };
 
+  const editUser = (email: string) => {
+    let searchedIndex = team.findIndex((user) => user.email === email);
+    const userToUpdate = team[searchedIndex];
+    console.log(userToUpdate);
+  };
+
   return (
     <div className="container-fluid no-select">
       <div className="row">
@@ -59,7 +65,7 @@ const Home = () => {
                 settingsAreClicked={settingsAreClicked}
                 setSettingsAreClicked={setSettingsAreClicked}
                 deleteUser={deleteUser}
-                addUser={addUser}
+                editUser={editUser}
               />
             </div>
           </div>

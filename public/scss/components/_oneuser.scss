@@ -2,6 +2,17 @@
   width: 100%;
   padding: 16px 0;
   gap: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lightcoral;
+    border-radius: 8px;
+  }
+
+  &:hover #email,
+  &:hover #permission {
+    color: #000000;
+  }
 
   &__profile {
     border-radius: 100px;
