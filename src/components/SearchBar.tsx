@@ -9,16 +9,18 @@ interface ISearchBarProps {
   searchedEmail: string;
   searchForEmail: React.Dispatch<string>;
   setUserAddingIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
-  addUser: React.Dispatch<IModel>;
 }
 
 const SearchBar = ({
   searchedEmail,
   searchForEmail,
   setUserAddingIsClicked,
-  addUser,
 }: ISearchBarProps) => {
   const [searchIsVisible, setSearchIsVisible] = useState(false);
+
+  const addClickHandle = () => {
+    setUserAddingIsClicked(true);
+  };
 
   const labelClickHandle = () => {
     setSearchIsVisible(!searchIsVisible);
@@ -28,17 +30,6 @@ const SearchBar = ({
     e
   ) => {
     searchForEmail(e.target.value);
-  };
-
-  const addClickHandle = () => {
-    setUserAddingIsClicked(true);
-    let newUser = {
-      name: "Olzhas",
-      email: "olzhas@gmail.com",
-      permissions: ["Тест"],
-      image: "https://picsum.photos/200",
-    };
-    addUser(newUser);
   };
 
   return (

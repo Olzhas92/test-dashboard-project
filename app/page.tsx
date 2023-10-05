@@ -56,7 +56,6 @@ const Home = () => {
                 searchedEmail={searchedEmail}
                 searchForEmail={searchForEmail}
                 setUserAddingIsClicked={setUserAddingIsClicked}
-                addUser={addUser}
               />
             </div>
             <div className="col-12 px-0 pb-5 dashboard">
@@ -64,8 +63,11 @@ const Home = () => {
                 team={team}
                 settingsAreClicked={settingsAreClicked}
                 setSettingsAreClicked={setSettingsAreClicked}
+                addUser={addUser}
                 deleteUser={deleteUser}
                 editUser={editUser}
+                userAddingIsClicked={userAddingIsClicked}
+                setUserAddingIsClicked={setUserAddingIsClicked}
               />
             </div>
           </div>
